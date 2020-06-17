@@ -18,7 +18,6 @@ Infi-Care Cares for you and the socitey. It provides customers the platform to s
   - Store it in `htdocs` folder inside `Xampp` folder like `C:\xampp\htdocs`
   - Open `Xampp` and start `Apache` and `MySQL` servers.
   - Open your browser and go for [http://localhost/phpmyadmin/]()
-  - Create a new database named `recmeds`.
   - In `recmeds` import the database `recmeds.sql` present in the database folder present in Infi-Care.
   - Open your browser and go for [http://localhost/Infi_Care-master/index.php]()
   - Now Register as different options present in the website and fill the tables in the database
