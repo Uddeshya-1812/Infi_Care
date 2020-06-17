@@ -1,14 +1,14 @@
 <?php
 SESSION_START();
 
-$conn = mysqli_connect("localhost","root","","recmeds");
+$conn = pg_connect("localhost","root","","recmeds");
 
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-mysqli_select_db($conn,'recmeds');
+pg_select_db($conn,'recmeds');
 
 
 
@@ -19,17 +19,17 @@ if(isset($_POST["submit"]))
   $password = $_POST['password'];
 
   $qe = "SELECT * FROM register where email = '$email'";
-  $res = mysqli_query($conn,$qe);
-  $n = mysqli_num_rows($res);
+  $res = pg_query($conn,$qe);
+  $n = pg_num_rows($res);
   if(!$n)
   {
     echo "<script> alert('This user do not exists!!'); window.location = 'login.php'</script>";
   }
 
   $q = "SELECT * FROM register where email = '$email' and password = '$password' ";   //Select the given row with entered email and password
-  $result = mysqli_query($conn,$q);               //Store it
-  $row = mysqli_fetch_assoc($result);             //this stores the data of the given row in the form of array
-  $num = mysqli_num_rows($result);                //Check if there is only 1 row for given email and password i.e. no duplicate data
+  $result = pg_query($conn,$q);               //Store it
+  $row = pg_fetch_assoc($result);             //this stores the data of the given row in the form of array
+  $num = pg_num_rows($result);                //Check if there is only 1 row for given email and password i.e. no duplicate data
 
 
   if($num==1)   // If entered email or username exists
