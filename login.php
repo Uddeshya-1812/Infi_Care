@@ -1,14 +1,14 @@
 <?php
 SESSION_START();
 
-$conn = pg_connect("localhost","root","","d9vp3j3a51t7jq");
+$conn = pg_connect("localhost","root","","recmeds");
 
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-pg_select_db($conn,'d9vp3j3a51t7jq');
+pg_select_db($conn,'recmeds');
 
 
 
